@@ -8,27 +8,41 @@
 
 ## Установка revealgo для Ubuntu и её производных
 Ставится довольно просто:
+
 ```bash
 sudo apt update
 sudo apt install golang
 ```
-После этого нужно сделать три вещи:
+
+После этого нужно сделать вот что:
   * Создать папку в которой будут храниться все ваши бинарные go файлы, библиотеки и тому подобное. Например, ~/golang
-  ```bash
-  mkdir ~/gopath
-  ```
+
+```bash
+mkdir ~/gopath
+```
+
   * Добавить в ваш .bashrc переменную GOPATH указывающую на только что созданную папку
-  ```bash
-  export GOPATH=/home/johnny/golang
-  ```
+
+```bash
+export GOPATH=/home/johnny/golang
+```
+
   * Добавить папку хранящую бинарные файлы go в PATH:
-  ```
-  export PATH=$PATH:~/golang/bin
-  ```
+
+```bash
+export PATH=$PATH:~/golang/bin
+```
+
+* Скачать и установить revealgo. Деалется это через встроенную утилиту go get:
+
+```bash
+$ go get github.com/yusukebe/revealgo/cmd/revealgo
+```
 
 ## Запуск revealgo
 
 После этого можно запускать revealgo:
+
 ```bash
 revealgo --theme original.css routeros.md
 ```
